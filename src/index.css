@@ -1,0 +1,382 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --garamond : 'EB Garamond', serif;
+}
+
+/* Utilities
+
+****************************/
+.buttom{
+  background-color: transparent;
+  border: 1px solid white;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--garamond);
+  letter-spacing: 2px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+
+}
+.buttom:hover{
+  background-color: #E3CA7A;
+  border: 1px solid #E3CA7A;
+}
+.buttom2{
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--garamond);
+  letter-spacing: 2px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.buttom2:hover{
+  background-color: #E3CA7A;
+  border: 1px solid #E3CA7A;
+}
+
+
+
+.container{
+  max-width: 1200px;
+}
+/* header 
+****************************/
+
+.home p,
+h1,
+h2 {
+  z-index: 50;
+}
+.home h1{
+  font-family: var(--garamond);
+}
+h2{
+  font-size: 40px;
+  margin: 20px 20px 10px;
+  font-family: var(--garamond);
+  line-height: 70px;
+}
+h5{
+  font-size: 30px;
+  margin: 10px 20px;
+  font-weight:lighter;
+  font-family: var(--garamond);
+}
+p{
+  font-size: 26px;
+  margin: 10px 20px;
+  font-weight:lighter;
+  font-family: var(--garamond);
+  color: #888888;
+  
+}
+@media(min-width: 768px){
+  h2{
+    font-size: 70px;
+  }
+  h5{
+    font-size: 32px;
+  }
+}
+.container-info p{
+  color: #888888;
+  margin-bottom: 50px;
+}
+.home {
+  margin-top: -180px;
+  background-image: url("/assets/local.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 120vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.home p{
+  color: white;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.9) 0%, hsla(0, 0%, 0%, 0.0) 100%);
+  z-index: 40;
+  left: 0;
+  right: 0;
+}
+.container-navbar{
+  width: 100%;
+  z-index: 100;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.9) 0%, hsla(0, 0%, 0%, 0.0) 100%);
+}
+
+.navBar {
+  
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ .logo {
+  max-width: 130px;
+  height: auto;
+
+}
+
+.navbar2{
+  width: 100%;
+  z-index: 100;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #191919;
+}
+.container-links {
+  font-family:  var(--garamond);
+  top: 150px;
+  display: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  width: 100%;
+  padding: 20px;
+}
+.link{
+  padding: 10px 0;
+}
+.container-links .link, .link-active{
+  padding: 10px;
+}
+
+.menu {
+  display: none;
+}
+.menu:checked + .container-links {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  animation: animation-menu 0.5s;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+@keyframes animation-menu {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.container-home{
+  position: absolute;
+  top: 30%;
+  z-index: 50;
+}
+@media (min-width: 768px) {
+  .navBar{
+    display: flex;
+    max-width: 1200px;
+
+  }
+  .container-links {
+    position: relative;
+    top: 0;
+    display: flex;
+    color: white;
+    gap: 1rem;
+  }
+  /* .container-links .link,  .link-active{
+    padding: 20px;
+  } */
+  
+  .container-links a:hover {
+    color: #E3CA7A;
+  }
+  .container-links .link-active {
+    color: rgb(227, 202, 122);
+
+  }
+}
+
+
+/* ICON MENU 
+******************************* */
+.icon-menu {
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all .5 ease-in-out;
+}
+
+.line1,
+.line2,
+.line3 {
+  margin: 5px auto;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  border-radius: 50px;
+}
+@media (min-width: 768px) {
+  .icon-menu, .line1, .line2, .line3,
+  .menu {
+    display: none;
+    
+  }
+  
+}
+
+/* END ICON MENU 
+******************************* */
+
+/* END Header
+******************************* */
+.black{
+  background-color: black;
+}
+
+.container-info__image{
+  display: grid;
+  gap: 1rem;
+  max-width: 700px;
+  margin:0 auto;
+  height: fit-content;
+}
+
+@media(min-width: 600px){
+  .container-info__image{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: column;
+  }
+  .image1{
+    grid-column: 1;
+    grid-auto-flow: row;
+
+  }
+  .image2{
+    grid-column: 1;
+    grid-auto-flow: row;
+
+
+  }
+  .image3{
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}
+@media(min-width: 1100px){
+  .container-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  .container-info__text{
+    grid-column: 1 / 2;
+
+  }
+  .container-info__image{
+    grid-column: 2;
+
+    grid-auto-flow: row;
+
+  }
+}
+
+.since-text{
+  max-width: 600px;
+}
+
+/* MENU
+******************************* */
+.title-menu, p{
+  font-size: 26px;
+  font-style: italic;
+  color: black;
+}
+.card-image img{
+  width: 100%;
+  object-fit: cover;
+  max-height: 230px;
+  overflow: hidden;
+}
+.container-title-description p{
+  color: #888888;
+  font-size: 20px;
+}
+
+.grid{
+  display: grid;
+  grid-auto-rows: 22rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  
+}
+
+
+.our-team{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-image:url("/assets/platter.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 400px;
+}
+.our-team p, .our-team h2, .our-team h5, button{
+  position: relative;
+  color: white;
+  z-index: 100;
+}
+
+.our-team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.9) 0%, hsla(0, 0%, 0%, 0.0) 100%);
+  left: 0;
+  right: 0;
+}
+
+
+/* MENU
+******************************* */
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
